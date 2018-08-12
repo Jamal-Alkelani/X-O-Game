@@ -7,6 +7,9 @@ def startGame():
 	utils.print_game(array)
 	while True:
 		player_input = read_input(player)
+		if not s_input_valid(input_data):
+			print("Enter a valid position please!")
+			continue
 		x,y = handle_user_input(player_input)
 		update_array(x,y,player)
 		if gameOver.gameOver(array,player):
