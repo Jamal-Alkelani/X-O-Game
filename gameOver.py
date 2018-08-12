@@ -1,5 +1,5 @@
 ##check if a player wins
-def gameOver(Mat,player):
+def is_win(Mat,player):
     for i in range(3):
         if(Mat[i][0]==player and Mat[i][1]==player and Mat[i][2]==player ):
             print ("1")
@@ -15,7 +15,7 @@ def gameOver(Mat,player):
     return False
     
 ##check if the matrix is full with no vectory
-def isFull(Mat):
+def is_full(Mat):
     for i in range(3):
         for j in range(3):
             if(Mat[i][j]==' '):

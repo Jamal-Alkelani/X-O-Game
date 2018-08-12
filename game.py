@@ -1,5 +1,4 @@
-import gameOver
-import utils
+from utils import *
  
 array = [[' ',' ',' '],[' ',' ',' '],[' ',' ',' ']]
 player = 'X'
@@ -12,11 +11,11 @@ def startGame():
 		x,y = handle_user_input(int(player_input))
 		if not update_array(x,y,player):
 			continue
-		utils.print_game(array)
-		if gameOver.gameOver(array,player):
+		print_game(array)
+		if is_win(array,player):
 			win(player)
 			break
-		if gameOver.isFull(array):
+		if is_full(array):
 			failed()
 			break
 
