@@ -16,5 +16,14 @@ def read_input():
 def win(player):
 	print()
 
+
+
+
+def handle_user_input(position):
+	x=(position - 1) / 3
+	y=(position - 1) % 3
+	return x,y
+
+
 if __name__ == "__main__":
     startGame()
