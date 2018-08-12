@@ -14,14 +14,14 @@ def gameOver(Mat,player):
         return True
     return False
     
-# ##check if the matrix is full with no vectory
-# def gameOver(Mat):
-#     for i in range(2):
-#         for j in range(2):
-#             if(Mat[i][j]==''):
-#                 return False
+##check if the matrix is full with no vectory
+def isFull(Mat):
+    for i in range(3):
+        for j in range(3):
+            if(Mat[i][j]==' '):
+                return False
     
-#     return True
+    return True
         
 
 
