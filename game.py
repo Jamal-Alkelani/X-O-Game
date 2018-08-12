@@ -6,15 +6,19 @@ player = 'X'
 def startGame():
 	utils.print_game(array)
 	while True:
+		player_input = read_input(player)
+		x,y = handle_user_input(player_input)
+		update_array(x,y,player)
 		if gameOver.gameOver(array,player):
 			win()
 			break
 
-def read_input():
-	a = raw_input("input here: ")
+
+def read_input(player):
+	a = raw_input("player " + player + ">> ")
 	return a
 def win(player):
-	print()
+	print("Player "+ player +" WON!!")
 
 
 
