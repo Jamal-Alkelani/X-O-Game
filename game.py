@@ -20,13 +20,14 @@ def read_input(player):
 def win(player):
 	print("Player "+ player +" WON!!")
 
-
-
-
 def handle_user_input(position):
 	x=(position - 1) / 3
 	y=(position - 1) % 3
 	return x,y
+
+def update_array(x,y,player):
+	array[x][y]=player
+
 
 def is_input_valid(input_data):
 	if(input_data.isdigit()):
