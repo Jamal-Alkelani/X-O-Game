@@ -13,10 +13,10 @@ def startGame():
 			win()
 			break
 
-
 def read_input(player):
 	a = raw_input("player " + player + ">> ")
 	return a
+
 def win(player):
 	print("Player "+ player +" WON!!")
 
@@ -26,7 +26,10 @@ def handle_user_input(position):
 	return x,y
 
 def update_array(x,y,player):
-	array[x][y]=player
+	if(array[x][y]==''):
+		array[x][y]=player
+	else:
+		print ("Cannot write over here !")
 
 
 def is_input_valid(input_data):
