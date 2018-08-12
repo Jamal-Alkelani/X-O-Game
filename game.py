@@ -10,7 +10,8 @@ def startGame():
 			print("Enter a valid position please!")
 			continue
 		x,y = handle_user_input(int(player_input))
-		update_array(x,y,player)
+		if not update_array(x,y,player):
+			continue
 		utils.print_game(array)
 		if gameOver.gameOver(array,player):
 			win(player)
@@ -21,10 +22,10 @@ def startGame():
 
 		swap_player()
 
-
 def read_input(player):
 	a = raw_input("player " + player + ">> ")
 	return a
+
 def win(player):
 	print("Player "+ player +" WON!!")
 def failed():
@@ -36,13 +37,18 @@ def handle_user_input(position):
 	return x,y
 
 def update_array(x,y,player):
-	print x,y
-	array[x][y]=player
+	global array
+	if(array[x][y]==' '):
+		array[x][y]=player
+		return True
+	else:
+		print ("Cannot write over here !")
+		return False
 
 
 def is_input_valid(input_data):
 	if(input_data.isdigit()):
-		if(input_data>='0' and input_data<='9'):
+		if( int(input_data) > 0 and int(input_data) <= 9 ):
 			return True
 		else:
 			return False
