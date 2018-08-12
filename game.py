@@ -24,6 +24,16 @@ def handle_user_input(position):
 	y=(position - 1) % 3
 	return x,y
 
+def is_input_valid(input_data):
+	if(input_data.isdigit()):
+		if(input_data>='0' and input_data<='9'):
+			return True
+		else:
+			return False
+	else:
+		return False
+
+
 
 if __name__ == "__main__":
     startGame()
